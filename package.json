@@ -5,7 +5,9 @@
   "main": "dist/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc && cpy \"src/public/**/*\" \"dist/src/public\"",
+    "build": "rimraf dist && npx tsc && cpy \"src/public/**/*\" \"dist/src/public\"",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "start": "node dist/src/index.js",
     "watch": "nodemon"
   },
@@ -32,7 +34,15 @@
     "concurrently": "^8.0.1",
     "cpy-cli": "^4.2.0",
     "nodemon": "^2.0.22",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
-  }
+  },
+
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+]
 }
