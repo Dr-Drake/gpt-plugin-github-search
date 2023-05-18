@@ -7,9 +7,9 @@ A plugin that allows the user to search for GitHub repositories using ChatGPT.
 ## Getting Started
 Before you run the project, make sure you have GitHub personal access token.
 Create a .env file, then add the following:
-- PAT=<Your GitHub PAT here>
-- TARGET_URL=<GITHUB API URL (as of now https://api.github.com/)>
-- USERNAME=Your GitHub username here>
+- PAT="Your GitHub PAT here"
+- TARGET_URL="GITHUB API URL ( as of now https://api.github.com/ )"
+- USERNAME="Your GitHub username here"
 
 Install the dependencies
 ```bash
