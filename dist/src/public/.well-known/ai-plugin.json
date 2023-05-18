@@ -9,10 +9,10 @@
     },
     "api": {
         "type": "openapi",
-        "url": "http://localhost:3333/openapi.yaml",
+        "url": "https://gpt-plugin-github-search.vercel.app",
         "is_user_authenticated": false
     },
-    "logo_url": "http://localhost:3333/logo.png",
+    "logo_url": "https://gpt-plugin-github-search.vercel.app/logo.svg",
     "contact_email": "ikem.ezechukwu@outlook.com",
     "legal_info_url": "http://www.example.com/legal"
 }
