@@ -60,8 +60,8 @@ app.use('/api', (0, http_proxy_middleware_1.createProxyMiddleware)({
     },
     onProxyReq: (proxyReq) => {
         // Add Basic Authentication header
-        const basicAuth = Buffer.from(`${username}:${accessToken}`).toString('base64'); // replace 'username:password' with your actual username and password
-        proxyReq.setHeader('Authorization', `Basic ${basicAuth}`);
+        //const basicAuth = Buffer.from(`${username}:${accessToken}`).toString('base64'); // replace 'username:password' with your actual username and password
+        proxyReq.setHeader('Authorization', `Bearer ${accessToken}`);
     },
 }));
 // Listen for incoming HTTP requests on specified PORT
