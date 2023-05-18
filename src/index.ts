@@ -2,7 +2,8 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import express, { Express, Request, Response } from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
-import morgan from 'morgan'
+import morgan from 'morgan';
+import * as path from 'path'
 
 // Express app initialization
 const app: Express = express();
@@ -17,12 +18,15 @@ const accessToken = process.env.PAT;
 app.use(morgan('combined'))
 
 // Serves static files from the public folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Setup reverse proxy
-app.use('/', createProxyMiddleware({ 
+app.use('/api', createProxyMiddleware({ 
     target: targetUrl,
     changeOrigin: true,
+    pathRewrite: {
+        '^/api': '/', // rewrite /api to /
+    },
     onProxyReq: (proxyReq) => {
 
         // Add Basic Authentication header
