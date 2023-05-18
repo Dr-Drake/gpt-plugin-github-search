@@ -5,6 +5,14 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import morgan from 'morgan';
 import * as path from 'path'
 
+/**
+ * References:
+ * https://platform.openai.com/docs/plugins/getting-started/running-a-plugin
+ * https://blog.cloudflare.com/magic-in-minutes-how-to-build-a-chatgpt-plugin-with-cloudflare-workers/
+ * https://api.github.com/
+ * https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.yaml
+ */
+
 // Express app initialization
 const app: Express = express();
 
