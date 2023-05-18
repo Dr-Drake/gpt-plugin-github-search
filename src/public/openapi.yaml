@@ -8,7 +8,7 @@ info:
     url: https://spdx.org/licenses/MIT
   termsOfService: https://docs.github.com/articles/github-terms-of-service
 servers:
-  - url: http://localhost:3333
+  - url: https://gpt-plugin-github-search.vercel.app
 externalDocs:
   description: GitHub v3 REST API
   url: https://docs.github.com/rest/
