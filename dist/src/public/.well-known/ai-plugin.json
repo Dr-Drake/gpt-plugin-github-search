@@ -9,7 +9,7 @@
     },
     "api": {
         "type": "openapi",
-        "url": "https://gpt-plugin-github-search.vercel.app",
+        "url": "https://gpt-plugin-github-search.vercel.app/openapi.yaml",
         "is_user_authenticated": false
     },
     "logo_url": "https://gpt-plugin-github-search.vercel.app/logo.svg",
