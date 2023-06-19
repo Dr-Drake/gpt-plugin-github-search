@@ -32,6 +32,7 @@ const express_1 = __importDefault(require("express"));
 const http_proxy_middleware_1 = require("http-proxy-middleware");
 const morgan_1 = __importDefault(require("morgan"));
 const path = __importStar(require("path"));
+const cors_1 = __importDefault(require("cors"));
 /**
  * References:
  * https://platform.openai.com/docs/plugins/getting-started/running-a-plugin
@@ -47,6 +48,8 @@ const port = process.env.PORT || 3333;
 const targetUrl = process.env.TARGET_URL;
 const username = process.env.USERNAME;
 const accessToken = process.env.PAT;
+// CORS
+app.use((0, cors_1.default)());
 // Request Logger
 app.use((0, morgan_1.default)('combined'));
 // Serves static files from the public folder

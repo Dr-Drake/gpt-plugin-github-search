@@ -3,7 +3,8 @@ dotenv.config();
 import express, { Express, Request, Response } from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import morgan from 'morgan';
-import * as path from 'path'
+import * as path from 'path';
+import cors from 'cors';
 
 /**
  * References:
@@ -22,6 +23,9 @@ const port = process.env.PORT || 3333;
 const targetUrl = process.env.TARGET_URL;
 const username = process.env.USERNAME;
 const accessToken = process.env.PAT;
+
+// CORS
+app.use(cors())
 
 // Request Logger
 app.use(morgan('combined'))
